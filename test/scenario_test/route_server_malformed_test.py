@@ -126,6 +126,8 @@ def check_func(exabgp_conf, result):
         for neighbor in neighbors:
             remote_ip = neighbor['conf']['remote_ip']
             if remote_ip == "10.0.0.1":
+                print "neighbor-json: ", neighbor['info']
+                print "\n"
                 q_state = neighbor['info']['bgp_state']
                 q_transitions = neighbor['info']['fsm_established_transitions']
                 q_address = remote_ip
